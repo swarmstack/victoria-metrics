@@ -8,4 +8,4 @@ services:
       mode: replicated
       replicas: 1
     volumes:
-      - ./local_bind_volume_dir:/data/loki
+      - ./local_bind_volume_dir:/victoria-metrics-data
