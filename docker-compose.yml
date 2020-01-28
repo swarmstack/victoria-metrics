@@ -1,31 +1,11 @@
 version: '3.5'
 
-networks:
-  default:
-    external: true
-    name: swarmstack_net
-
-volumes:
-    victoria-metrics-data:
-      driver: pxd
-      driver_opts:
-        repl: 2
-        size: 40
-        snap_schedule: "policy=p1"
-
 services:
   victoria-metrics:
     image: victoriametrics/victoria-metrics:v1.32.7
     command: -storageDataPath=/victoria-metrics-data
     deploy:
-      labels:
-        prometheus.enable: "true"
-        prometheus.port: "8428"
-        prometheus.path: "/metrics"
       mode: replicated
-      placement:
-        constraints:
-          - node.Labels.storagegroup==RED
       replicas: 1
     volumes:
-      - victoria-metrics-data:/victoria-metrics-data
+      - ./local_bind_volume_dir:/data/loki
