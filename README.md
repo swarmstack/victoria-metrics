@@ -2,8 +2,6 @@
 
 Docker compose file for [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics): fast, cost-effective and scalable time series database, long-term remote storage for Prometheus
 
-If you need to scale your metrics application even beyond the performance capabilities of VictoriaMetrics, see [Trickster](https://github.com/swarmstack/trickster) for an in-memory cache that can front-end VictoriaMetrics or Prometheus for possible further performance gains.
-
 ## USAGE
 
 ```
