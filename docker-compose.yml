@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   victoria-metrics:
-    image: victoriametrics/victoria-metrics:v1.33.1
+    image: victoriametrics/victoria-metrics:latest
     command: -storageDataPath=/victoria-metrics-data
     deploy:
       mode: replicated
