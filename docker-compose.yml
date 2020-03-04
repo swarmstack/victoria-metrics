@@ -3,7 +3,7 @@ version: '3.5'
 services:
   victoria-metrics:
     image: victoriametrics/victoria-metrics:latest
-    command: -storageDataPath=/victoria-metrics-data
+    command: -storageDataPath=/victoria-metrics-data -memory.allowedPercent=20
     deploy:
       mode: replicated
       replicas: 1

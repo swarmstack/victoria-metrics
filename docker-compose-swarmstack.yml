@@ -16,7 +16,7 @@ volumes:
 services:
   victoria-metrics:
     image: victoriametrics/victoria-metrics:latest
-    command: -storageDataPath=/victoria-metrics-data
+    command: -storageDataPath=/victoria-metrics-data -memory.allowedPercent=20
     deploy:
       labels:
         prometheus.enable: "true"
